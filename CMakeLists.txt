@@ -38,6 +38,10 @@ else()
     else()
         add_executable(QT5Landlords
             ${PROJECT_SOURCES}
+            card.h card.cpp
+            cardpanel.h cardpanel.cpp
+            player.h player.cpp
+            cards.h cards.cpp
         )
     endif()
 endif()
