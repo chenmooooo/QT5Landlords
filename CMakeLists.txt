@@ -44,6 +44,8 @@ else()
             cards.h cards.cpp
             userplayer.h userplayer.cpp
             robot.h robot.cpp
+            gamecontrol.h gamecontrol.cpp
+            playhand.h playhand.cpp
         )
     endif()
 endif()
