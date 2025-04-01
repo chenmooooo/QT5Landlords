@@ -8,7 +8,6 @@ class Robot : public Player
 {
     Q_OBJECT
 public:
-    //使用基类构造函数
     using Player::Player;
     explicit Robot(QObject *parent = nullptr);
 

@@ -115,7 +115,37 @@ void GameControl::initAllCards()
 
 Card GameControl::takeOneCard()
 {
+#if 0
+    // 测试飞机
+    static bool flag = true;
+    static Cards tmp;
+    if(flag)
+    {
+        Card c1(Card::Card_10, Card::Club);
+        Card c2(Card::Card_10, Card::Diamond);
+        Card c3(Card::Card_10, Card::Heart);
+
+        Card c4(Card::Card_J, Card::Club);
+        Card c5(Card::Card_J, Card::Diamond);
+        Card c6(Card::Card_J, Card::Heart);
+
+        tmp << c1 << c2 << c3 << c4 << c5 << c6;
+        m_allCards.remove(tmp);
+        flag = false;
+    }
+
+    if(getCurrentPlayer() == m_user && !tmp.isEmpty())
+    {
+        return tmp.takeRandomCard();
+    }
+    else
+    {
+        return m_allCards.takeRandomCard();
+    }
+#else
+    // not test code
     return m_allCards.takeRandomCard();
+#endif
 }
 
 Cards GameControl::getSurplusCards()

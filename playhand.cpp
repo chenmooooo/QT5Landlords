@@ -292,7 +292,7 @@ bool PlayHand::isPlaneTwoSingle()
         std::sort(m_threeCard.begin(), m_threeCard.end());
         std::sort(m_oneCard.begin(), m_oneCard.end());
         if(m_threeCard[1] - m_threeCard[0] == 1 && m_threeCard[1] < Card::Card_2 &&
-            m_oneCard[0] != Card::Card_SJ && m_oneCard[1] != Card::Card_BJ)
+                m_oneCard[0] != Card::Card_SJ && m_oneCard[1] != Card::Card_BJ)
         {
             return true;
         }
@@ -319,7 +319,7 @@ bool PlayHand::isSeqPair()
     {
         std::sort(m_twoCard.begin(), m_twoCard.end());
         if(m_twoCard.last() - m_twoCard.first() == (m_twoCard.size() -1) &&
-            m_twoCard.first() >= Card::Card_3 && m_twoCard.last() < Card::Card_2)
+                m_twoCard.first() >= Card::Card_3 && m_twoCard.last() < Card::Card_2)
         {
             return true;
         }
@@ -333,7 +333,7 @@ bool PlayHand::isSeqSingle()
     {
         std::sort(m_oneCard.begin(), m_oneCard.end());
         if(m_oneCard.last() - m_oneCard.first() == (m_oneCard.size() -1) &&
-            m_oneCard.first() >= Card::Card_3 && m_oneCard.last() < Card::Card_2)
+                m_oneCard.first() >= Card::Card_3 && m_oneCard.last() < Card::Card_2)
         {
             return true;
         }
@@ -345,7 +345,7 @@ bool PlayHand::isBomb()
 {
     if(m_oneCard.isEmpty() && m_twoCard.isEmpty() && m_threeCard.isEmpty() && m_fourCard.size() == 1)
     {
-        return true;
+         return true;
     }
     return false;
 }
@@ -354,7 +354,7 @@ bool PlayHand::isBombSingle()
 {
     if(m_oneCard.size() == 1 && m_twoCard.isEmpty() && m_threeCard.isEmpty() && m_fourCard.size() == 1)
     {
-        return true;
+         return true;
     }
     return false;
 }
@@ -363,7 +363,7 @@ bool PlayHand::isBombPair()
 {
     if(m_oneCard.isEmpty() && m_twoCard.size() == 1 && m_threeCard.isEmpty() && m_fourCard.size() == 1)
     {
-        return true;
+         return true;
     }
     return false;
 }
@@ -432,3 +432,4 @@ bool PlayHand::isBombJokersTwoSingle()
     }
     return false;
 }
+

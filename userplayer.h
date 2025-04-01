@@ -8,7 +8,6 @@ class UserPlayer : public Player
 {
     Q_OBJECT
 public:
-    //使用基类构造函数
     using Player::Player;
     explicit UserPlayer(QObject *parent = nullptr);
 

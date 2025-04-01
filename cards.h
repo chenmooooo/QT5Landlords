@@ -1,6 +1,5 @@
 #ifndef CARDS_H
 #define CARDS_H
-
 #include "card.h"
 
 #include <QSet>

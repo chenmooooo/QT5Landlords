@@ -1,7 +1,6 @@
 #ifndef CARD_H
 #define CARD_H
 
-
 #include <QVector>
 
 class Card
@@ -65,6 +64,5 @@ uint qHash(const Card& card);
 
 // 定义类型的别名
 using CardList = QVector<Card>;
-
 
 #endif // CARD_H

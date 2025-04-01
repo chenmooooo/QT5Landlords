@@ -100,4 +100,5 @@ protected:
     Cards m_pendCards;
     Player* m_pendPlayer = nullptr;
 };
+
 #endif // PLAYER_H

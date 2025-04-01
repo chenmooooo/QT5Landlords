@@ -29,7 +29,6 @@ public:
 
     // 扑克牌的所有者
     void setOwner(Player* player);
-
     Player* getOwner();
 
     // 模拟扑克牌的点击事件
