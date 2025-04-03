@@ -64,11 +64,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 
-INCLUDEPATH += C:\protobuf\include
-LIBS += -L C:\protobuf\lib -lprotobufd
+INCLUDEPATH += "C:/protobuf/include"
+LIBS += -L "C:/protobuf/lib" -lprotobuf
 
-INCLUDEPATH += C:\Program Files\OpenSSL-Win64\include
-LIBS += -L C:\Program Files\OpenSSL-Win64\lib -lopenssl
+INCLUDEPATH += "C:/Program Files/OpenSSL-Win64/include"
+LIBS += -L"C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD" -lopenssl
 
 
 RESOURCES += \

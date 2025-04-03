@@ -9,15 +9,34 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
+
 
 set(PROJECT_SOURCES
         main.cpp
-        gamepanel.cpp
-        gamepanel.h
-        gamepanel.ui
 )
+
+
+
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/card
+    ${PROJECT_SOURCE_DIR}/windows
+    ${PROJECT_SOURCE_DIR}/control
+    ${PROJECT_SOURCE_DIR}/player
+    ${PROJECT_SOURCE_DIR}/strategy
+    ${PROJECT_SOURCE_DIR}/thread
+)
+add_subdirectory(card)
+add_subdirectory(windows)
+add_subdirectory(control)
+add_subdirectory(player)
+add_subdirectory(strategy)
+add_subdirectory(thread)
+
+# source
+qt5_add_resources(RES res.qrc)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QT5Landlords
@@ -38,19 +57,14 @@ else()
     else()
         add_executable(QT5Landlords
             ${PROJECT_SOURCES}
-            card.h card.cpp
-            cardpanel.h cardpanel.cpp
-            player.h player.cpp
-            cards.h cards.cpp
-            userplayer.h userplayer.cpp
-            robot.h robot.cpp
-            gamecontrol.h gamecontrol.cpp
-            playhand.h playhand.cpp
+            ${RES}
         )
     endif()
 endif()
 
-target_link_libraries(QT5Landlords PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(QT5Landlords PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    card windows control player strategy thread
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
