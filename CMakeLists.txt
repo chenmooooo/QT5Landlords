@@ -34,6 +34,7 @@ add_subdirectory(control)
 add_subdirectory(player)
 add_subdirectory(strategy)
 add_subdirectory(thread)
+add_subdirectory(tcp)
 
 # source
 qt5_add_resources(RES res.qrc)
